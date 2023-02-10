@@ -60,6 +60,7 @@
                         <label for="idproof">ID Proof:</label>
                         <input type="file" class="form-control-file" id="idproof" name="idproof">
                     </div>
+                    <a href="/auth/login/">Already have an account??</a>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
