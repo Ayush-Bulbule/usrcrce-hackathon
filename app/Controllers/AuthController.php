@@ -117,7 +117,14 @@ class AuthController extends BaseController
                 'isLoggedIn' => true
             ]);
 
-            return redirect()->to(base_url('client/dashboard'));
+            if($user['role']=='client'){
+
+                return redirect()->to(base_url('client/dashboard'));
+            }else{
+                return redirect()->to(base_url('worker/dashboard'));
+
+            }
+
         }
     }
 }

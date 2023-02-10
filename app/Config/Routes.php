@@ -43,6 +43,13 @@ $routes->post('/auth/register', 'AuthController::register');
 // Client Routes ---------------------
 $routes->get('client/dashboard','ClientController::index');
 
+
+
+
+//Worker Routes
+$routes->get('worker/dashboard','WorkerController::index');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
