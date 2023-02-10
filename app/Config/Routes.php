@@ -38,6 +38,11 @@ $routes->post('/auth/login', 'AuthController::login');
 $routes->get('/auth/register', 'AuthController::register_view');
 $routes->post('/auth/register', 'AuthController::register');
 
+
+
+// Client Routes ---------------------
+$routes->get('client/dashboard','ClientController::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

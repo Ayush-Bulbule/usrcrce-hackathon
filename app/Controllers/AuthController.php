@@ -96,17 +96,19 @@ class AuthController extends BaseController
 
         $user = $model->where('email', $email)->first();
 
+        echo $email;
+
         if (!$user)
         {
             session()->setFlashdata('error', 'Email not found.');
 
             return redirect()->to(base_url('login'));
         }
-        else if (!password_verify($password, $user['password']))
+        else if (!$password == $user['password'])
         {
             session()->setFlashdata('error', 'Incorrect password.');
 
-            return redirect()->to(base_url('login'));
+            return redirect()->to(base_url('auth/login'));
         }
         else
         {
@@ -115,7 +117,7 @@ class AuthController extends BaseController
                 'isLoggedIn' => true
             ]);
 
-            return redirect()->to(base_url('dashboard'));
+            return redirect()->to(base_url('client/dashboard'));
         }
     }
 }

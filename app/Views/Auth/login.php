@@ -13,16 +13,14 @@
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
+   
 
     <div class="container">
+        <h4 class="text-center">Login</h4>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-10 mx-auto">
                 <form action="<?php echo base_url('auth/login'); ?>" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
+                    
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" id="email" name="email">
