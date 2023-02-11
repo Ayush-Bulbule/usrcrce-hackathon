@@ -9,6 +9,7 @@ class AdminController extends BaseController
 {
     public function index()
     {
+        
         return view('Admin\dashboard');
     }
 
@@ -63,14 +64,28 @@ class AdminController extends BaseController
     //worker view
     public function workers_view()
    {
-    return view('Admin\workers');
+    $db = \Config\Database::connect();
+
+    $query = $db->query("SELECT * FROM users WHERE role = 'worker'");
+
+    $results = $query->getResultArray();
+    //print_r($results);
+    
+    
+    return view('Admin\workers',['results' => $results]);
    }
 
 
    //clients view
    public function clients_view()
    {
-    return view('Admin\clients');
+    $db = \Config\Database::connect();
+
+    $query = $db->query("SELECT * FROM users WHERE role = 'client'");
+
+    $results = $query->getResultArray();
+    //print_r($results);
+    return view('Admin\clients',['results' => $results]);
    }
     
 

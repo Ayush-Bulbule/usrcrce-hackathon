@@ -46,6 +46,8 @@ $routes->get('/auth/logout', 'AuthController::logout');
 $routes->get('client/dashboard','ClientController::index');
 $routes->get('client/profile', 'AuthController::profile_view');
 $routes->post('client/profile', 'AuthController::profile');
+$routes->get('/client/add_req', 'ClientController::add_req_view');
+$routes->post('/client/add_req', 'ClientController::add_req');
 
 
 

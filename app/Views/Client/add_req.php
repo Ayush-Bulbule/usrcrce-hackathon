@@ -75,8 +75,8 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
-              <a href="/index.html">
-                <img src="images/logo.png" alt="Mono">
+              <a href="dashboard">
+                <img src="/images/logo.png" alt="Mono">
                 <span class="brand-name">Work Connect</span>
               </a>
             </div>
@@ -154,7 +154,7 @@
                 <span class="sr-only">Toggle navigation</span>
               </button>
 
-              <span class="page-title">Welcome Client</span>
+              <span class="page-title">Welcome Client  @<?= session()->get('name') ?></span>
 
               <div class="navbar-right ">
 
@@ -188,7 +188,7 @@
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="user-profile.html">
-                                  <img src="images/user/user-sm-02.jpg" alt="User Image">
+                                  <img src="/images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
@@ -334,16 +334,19 @@
                     </div>
                     <div class="card-body">
                         
-                        <form>
+                        <form  action="<?php echo base_url('client/add_req'); ?>" method="post" enctype="multipart/form-data">
                           <div class="form-group">
                             <label for="exampleFormControlInput44">Title</label>
-                            <input type="email" name="title" class="form-control rounded-0" id="exampleFormControlInput4" placeholder="Enter title">
+                            <input type="text" name="title" class="form-control rounded-0" id="exampleFormControlInput4" placeholder="Enter title">
                             
                           </div>
                           <div class="form-group">
                             <label for="exampleFormControlPasswor3">Description</label>
                             <textarea class="form-control" name="description"></textarea>
                           </div>
+
+                          <input type="text" hidden name="name" class="form-control rounded-0" id="exampleFormControlInput4" placeholder="Enter title" value="<?= $user['name'] ?>">
+                          
                           <div class="form-group">
                             <label for="exampleFormControlSelect14">Select Category</label>
                             <select class="form-control rounded-0" id="category" name="category">
@@ -401,7 +404,7 @@
                           <div class="media media-sm">
                             <div class="media-sm-wrapper">
                               <a href="user-profile.html">
-                                <img src="images/user/user-sm-01.jpg" alt="User Image">
+                                <img src="/images/user/user-sm-01.jpg" alt="User Image">
                                 <span class="active bg-primary"></span>
                               </a>
                             </div>
@@ -416,7 +419,7 @@
                           <div class="media media-sm">
                             <div class="media-sm-wrapper">
                               <a href="user-profile.html">
-                                <img src="images/user/user-sm-02.jpg" alt="User Image">
+                                <img src="/images/user/user-sm-02.jpg" alt="User Image">
                                 <span class="active bg-primary"></span>
                               </a>
                             </div>
@@ -431,7 +434,7 @@
                           <div class="media media-sm">
                             <div class="media-sm-wrapper">
                               <a href="user-profile.html">
-                                <img src="images/user/user-sm-03.jpg" alt="User Image">
+                                <img src="/images/user/user-sm-03.jpg" alt="User Image">
                               </a>
                             </div>
                             <div class="media-body">
@@ -445,7 +448,7 @@
                           <div class="media media-sm">
                             <div class="media-sm-wrapper">
                               <a href="user-profile.html">
-                                <img src="images/user/user-sm-04.jpg" alt="User Image">
+                                <img src="/images/user/user-sm-04.jpg" alt="User Image">
                               </a>
   
                             </div>

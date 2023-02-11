@@ -76,7 +76,7 @@
       <div id="sidebar" class="sidebar sidebar-with-footer">
         <!-- Aplication Brand -->
         <div class="app-brand">
-          <a href="/index.html">
+          <a href="dashboard">
             <img src="/images/logo.png" alt="Mono">
             <span class="brand-name">Work Connect</span>
           </a>
@@ -179,7 +179,24 @@
       <div class="content-wrapper">
         <div class="content">
 
-
+        <div class="row">
+                    <div class="col-xl-3 col-sm-6">
+                      <div class="card card-default card-mini">
+                        <div class="card-header">
+                          <h2>$124</h2>
+                          <div class="dropdown">
+                          
+                          </div>
+                          <div class="sub-title mt-5">
+                            <span class="mr-1">Workers</span> |
+                            <span class="mx-1">45%</span>
+                            <i class="mdi mdi-arrow-up-bold text-success"></i>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+</div> 
 
 
 
