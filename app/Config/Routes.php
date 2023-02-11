@@ -70,6 +70,7 @@ $routes->get('admin/workers', 'AdminController::workers_view');
 $routes->get('admin/clients', 'AdminController::clients_view');
 $routes->get('admin/requests', 'AdminController::requests_view');
 $routes->post('admin/requests', 'AdminController::requests');
+$routes->get('admin/workdone', 'AdminController::workdone_view');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

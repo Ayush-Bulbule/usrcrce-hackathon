@@ -98,6 +98,13 @@
               </a>
             </li>
 
+            <li>
+              <a class="sidenav-item-link" href="workdone">
+                <i class="mdi mdi-swap-vertical"></i>
+                <span class="nav-text">Requests Completed</span>
+              </a>
+            </li>
+
 
 
 

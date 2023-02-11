@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Auth;
+use App\Models\Task;
+use App\Models\Quote;
 
 class AdminController extends BaseController
 {
@@ -120,7 +122,23 @@ class AdminController extends BaseController
 
     return redirect()->to(base_url('admin/dashboard'));
    }
-    
+   
+
+   //requests completed view
+   //request view
+   public function workdone_view()
+   {
+        $model = new Task();
+        $user_model = new Auth();
+        $quote_model = new Quote();
+        $task = $model->where('status','completed')->first();
+        $client = $user_model->where('id',$task['client'])->first();
+        $data['task'] = $task;
+        $data['client'] = $client;
+        print_r($data);
+        
+        return view('Admin\workdone',$data);
+   }
 
 
 }
