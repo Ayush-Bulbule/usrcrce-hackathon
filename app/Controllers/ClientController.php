@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Task;
 
 class ClientController extends BaseController
 {
@@ -10,5 +11,11 @@ class ClientController extends BaseController
     {
         //
         return view('Client/dashboard');
+    }
+    public function addTask(){
+        $model = new Task();
+
+
+        
     }
 }

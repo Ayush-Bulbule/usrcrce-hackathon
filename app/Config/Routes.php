@@ -37,6 +37,9 @@ $routes->get('/auth/login', 'AuthController::login_view');
 $routes->post('/auth/login', 'AuthController::login');
 $routes->get('/auth/register', 'AuthController::register_view');
 $routes->post('/auth/register', 'AuthController::register');
+$routes->get('/auth/profile', 'AuthController::profile_view');
+$routes->post('/auth/profile', 'AuthController::profile');
+$routes->get('/auth/logout', 'AuthController::logout');
 
 
 

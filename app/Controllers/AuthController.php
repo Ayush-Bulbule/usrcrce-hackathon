@@ -102,7 +102,7 @@ class AuthController extends BaseController
         {
             session()->setFlashdata('error', 'Email not found.');
 
-            return redirect()->to(base_url('login'));
+            return redirect()->to(base_url('auth/login'));
         }
         else if (!$password == $user['password'])
         {
@@ -127,8 +127,72 @@ class AuthController extends BaseController
 
         }
     }
+
+    //Logout
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('auth/login');
+    }
+
+    //update user
+    public function update_user($id)
+    {
+        $model = new Auth();
+
+        $data = [
+            'name' => $this->request->getVar('name'),
+            'email' => $this->request->getVar('email'),
+            'password' => $this->request->getVar('password'),
+            'age' => $this->request->getVar('age'),
+            'role' => $this->request->getVar('role'),
+            'phone' => $this->request->getVar('phone'),
+            'address' => $this->request->getVar('address'),
+            'work_cat' => $this->request->getVar('work_cat'),
+            'idproof' => $this->request->getVar('idproof')
+        ];
+
+        $model->update($id, $data);
+
+        return redirect()->to(base_url('auth/login'));
+    }
+
+    //get all users
+    public function get_users()
+    {
+        $model = new Auth();
+
+        $data['users'] = $model->findAll();
+
+        return view('users', $data);
+    }
+
+    public function profile_view(){
+        return view('Auth\profile');
+    }
+    //to handle registration of user with fileds - 'name','email','password','age','role','phone','address','work_cat','idproof
+    public function profile()
+
+    {
+        helper(['form', 'url']);
+        
+
+        $model = new Auth();
+        $id = 1;
+
+        $data = [
+            'name' => $this->request->getVar('name'),
+            'email' => $this->request->getVar('email'),
+            'password' => $this->request->getVar('password'),
+            'phone' => $this->request->getVar('phone'),
+            'address' => $this->request->getVar('address'),
+        ];
+
+        $model->update($id, $data);
+
+        return redirect()->to(base_url('auth/dashboard'));
+      
+    }
 }
-
-
 
 
