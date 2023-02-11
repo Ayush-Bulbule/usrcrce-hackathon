@@ -77,7 +77,7 @@
         <!-- Aplication Brand -->
         <div class="app-brand">
           <a href="/index.html">
-            <img src="images/logo.png" alt="Mono">
+            <img src="/images/logo.png" alt="Mono">
             <span class="brand-name">Work Connect</span>
           </a>
         </div>
@@ -98,7 +98,7 @@
             <li>
               <a class="sidenav-item-link" href="">
                 <i class="mdi mdi-database"></i>
-                <span class="nav-text">Manage Requests</span>
+                <span class="nav-text">Manage Quotes</span>
               </a>
             </li>
 
@@ -154,7 +154,7 @@
             <span class="sr-only">Toggle navigation</span>
           </button>
 
-          <span class="page-title">Welcome Client @<?php session()->get('name');?></span>
+          <span class="page-title">Welcome Client @<?= session()->get('name') ?></span>
 
           <div class="navbar-right ">
 
@@ -191,7 +191,7 @@
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="">
                               <span class="title mb-0">John Doe</span>
                               <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly months do things on at.</span>
                               <span class="time">
@@ -203,7 +203,7 @@
 
                         <div class="media media-sm p-4 bg-light mb-0">
                           <div class="media-sm-wrapper bg-primary">
-                            <a href="user-profile.html">
+                            <a href="auth/profile">
                               <i class="mdi mdi-calendar-check-outline"></i>
                             </a>
                           </div>
@@ -293,7 +293,7 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li>
-                    <a class="dropdown-link-item" href="user-profile.html">
+                    <a class="dropdown-link-item" href="profile">
                       <i class="mdi mdi-account-outline"></i>
                       <span class="nav-text">My Profile</span>
                     </a>
