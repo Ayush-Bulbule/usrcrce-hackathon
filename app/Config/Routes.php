@@ -37,6 +37,19 @@ $routes->get('/auth/login', 'AuthController::login_view');
 $routes->post('/auth/login', 'AuthController::login');
 $routes->get('/auth/register', 'AuthController::register_view');
 $routes->post('/auth/register', 'AuthController::register');
+$routes->get('/auth/logout', 'AuthController::logout');
+
+
+
+// Client Routes ---------------------
+$routes->get('client/dashboard','ClientController::index');
+
+
+
+
+//Worker Routes
+$routes->get('worker/dashboard','WorkerController::index');
+
 
 /*
  * --------------------------------------------------------------------

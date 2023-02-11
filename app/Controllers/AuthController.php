@@ -96,17 +96,19 @@ class AuthController extends BaseController
 
         $user = $model->where('email', $email)->first();
 
+        echo $email;
+
         if (!$user)
         {
             session()->setFlashdata('error', 'Email not found.');
 
-            return redirect()->to(base_url('login'));
+            return redirect()->to(base_url('auth/login'));
         }
-        else if (!password_verify($password, $user['password']))
+        else if (!$password == $user['password'])
         {
             session()->setFlashdata('error', 'Incorrect password.');
 
-            return redirect()->to(base_url('login'));
+            return redirect()->to(base_url('auth/login'));
         }
         else
         {
@@ -115,8 +117,54 @@ class AuthController extends BaseController
                 'isLoggedIn' => true
             ]);
 
-            return redirect()->to(base_url('dashboard'));
+            if($user['role']=='client'){
+
+                return redirect()->to(base_url('client/dashboard'));
+            }else{
+                return redirect()->to(base_url('worker/dashboard'));
+
+            }
+
         }
+    }
+
+    //Logout
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('auth/login');
+    }
+
+    //update user
+    public function update_user($id)
+    {
+        $model = new Auth();
+
+        $data = [
+            'name' => $this->request->getVar('name'),
+            'email' => $this->request->getVar('email'),
+            'password' => $this->request->getVar('password'),
+            'age' => $this->request->getVar('age'),
+            'role' => $this->request->getVar('role'),
+            'phone' => $this->request->getVar('phone'),
+            'address' => $this->request->getVar('address'),
+            'work_cat' => $this->request->getVar('work_cat'),
+            'idproof' => $this->request->getVar('idproof')
+        ];
+
+        $model->update($id, $data);
+
+        return redirect()->to(base_url('auth/login'));
+    }
+
+    //get all users
+    public function get_users()
+    {
+        $model = new Auth();
+
+        $data['users'] = $model->findAll();
+
+        return view('users', $data);
     }
 }
 
