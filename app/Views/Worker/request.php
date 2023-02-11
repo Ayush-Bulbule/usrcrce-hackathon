@@ -28,7 +28,7 @@
               <td>".$row['description']."</td>
               <td>".$row['category']."</td>
               <td>".$row['client']."</td>
-              <td><a class='btn btn-danger'>Quote</a></td>
+              <td><a class='btn btn-primary'>Quote</a></td>
 
             </tr>";
             }

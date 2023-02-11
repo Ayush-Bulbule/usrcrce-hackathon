@@ -28,7 +28,7 @@
               <th scope="col">Age</th>
               <th scope="col">Work Category</th>
               <th scope="col">Address</th>
-              <th scope="col">Id</th>
+              <th scope="col">Id Proof</th>
             </tr>
           </thead>
           <tbody>
@@ -44,7 +44,7 @@
               <td>".$row['age']."</td>
               <td>".$row['work_cat']."</td>
               <td>".$row['address']."</td>
-              <td><img src='/uploads/".$row['idproof']."' style='height:30px'></td>
+              <td><a download href='/uploads/".$row['idproof']."'><i class='mdi mdi-download'></a></td>
             </tr>";
             }
            

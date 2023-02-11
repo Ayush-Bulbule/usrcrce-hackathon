@@ -5,7 +5,7 @@
       <h4 class="text-center pt-4">Your Details</h4>
 
 
-      <form action="<?php echo base_url('auth/profile'); ?>" method="post" enctype="multipart/form-data">
+      <form action="<?php echo base_url('worker/profile'); ?>" method="post" enctype="multipart/form-data">
         <div class="row mb-2">
           <div class="col-lg-6">
             <div class="form-group">

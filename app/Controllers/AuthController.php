@@ -118,6 +118,12 @@ class AuthController extends BaseController
 
             return redirect()->to(base_url('auth/login'));
         }
+        else if ($user['status'] != 1)
+        {
+            session()->setFlashdata('error', 'Incorrect password.');
+
+            return redirect()->to(base_url('auth/login'));
+        }
         else
         {
             session()->set([
@@ -198,7 +204,7 @@ class AuthController extends BaseController
         
 
         $model = new Auth();
-        $id = 1;
+        $id = $id = session()->get('id');;
 
         $data = [
             'name' => $this->request->getVar('name'),
@@ -210,9 +216,8 @@ class AuthController extends BaseController
 
         $model->update($id, $data);
 
-        return redirect()->to(base_url('auth/dashboard'));
+        return redirect()->to(base_url('/'));
       
     }
 }
-
 

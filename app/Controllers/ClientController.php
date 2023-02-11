@@ -33,6 +33,22 @@ class ClientController extends BaseController
         return view('client/profile', ['user' => $user]);
         
     }
+    public function get_tasks()
+    {
+        $model = new Task();
+        $id = session()->get('name');
+        $tasks = $model->where('client', $id)->findAll();
+        
+        return view('client/tasks', ['tasks' => $tasks]);
+    }
+
+    public function workers()
+    {
+        $model = new Auth();
+        $workers = $model->where('role', 'worker')->findAll();
+
+        return view('client/workers',['workers' => $workers]);
+    }
 
 
     public function add_req()

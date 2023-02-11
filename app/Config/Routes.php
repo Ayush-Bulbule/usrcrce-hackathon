@@ -44,6 +44,7 @@ $routes->get('/auth/logout', 'AuthController::logout');
 
 // Client Routes ---------------------
 $routes->get('client/dashboard','ClientController::index');
+$routes->get('client/workers','ClientController::workers');
 $routes->get('client/tasks', 'ClientController::get_tasks');
 $routes->get('client/addtask', 'ClientController::add_req');
 $routes->post('client/addtask', 'ClientController::add_req');
@@ -62,11 +63,13 @@ $routes->get('worker/request', 'WorkerController::request_view');
 
 
 //Admin Routes
-$routes->get('admin','AdminController::index');
+$routes->get('admin/dashboard','AdminController::index');
 $routes->get('admin/login','AdminController::login_view');
 $routes->post('admin/login', 'AdminController::login');
 $routes->get('admin/workers', 'AdminController::workers_view');
 $routes->get('admin/clients', 'AdminController::clients_view');
+$routes->get('admin/requests', 'AdminController::requests_view');
+$routes->post('admin/requests', 'AdminController::requests');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

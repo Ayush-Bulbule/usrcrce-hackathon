@@ -14,7 +14,7 @@ class Auth extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name','email','password','age','role','phone','address','work_cat','idproof'];
+    protected $allowedFields    = ['name','email','password','age','role','phone','address','work_cat','idproof','status'];
 
     // Dates
     protected $useTimestamps = false;

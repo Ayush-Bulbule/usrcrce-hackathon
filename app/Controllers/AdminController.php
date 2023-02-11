@@ -87,6 +87,39 @@ class AdminController extends BaseController
     //print_r($results);
     return view('Admin\clients',['results' => $results]);
    }
+
+   //request view
+   public function requests_view()
+   {
+    $db = \Config\Database::connect();
+
+    $query = $db->query("SELECT * FROM users WHERE status=0 ");
+
+    $results = $query->getResultArray();
+    //print_r($results);
+    
+    
+    return view('Admin\requests',['results' => $results]);
+   }
+
+   public function requests()
+   {
+    
+    helper(['form', 'url']);
+    $model = new Auth();
+    $id = $this->request->getVar('id');
+    
+    $data = [
+        'status' => '1',
+        'address'=>'1',
+        
+
+    ];
+
+    $model->update($id, $data);
+
+    return redirect()->to(base_url('admin/dashboard'));
+   }
     
 
 
