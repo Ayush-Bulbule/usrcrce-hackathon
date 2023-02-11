@@ -73,7 +73,7 @@
                           <button type="submit" class="btn btn-primary btn-pill mb-4">Login</button>
 
                           <p>Don't have an account yet ?
-                            <a class="text-blue" href="sign-up.html">Sign Up</a>
+                            <a class="text-blue" href="/auth/register">Sign Up</a>
                           </p>
                         </div>
                       </div>
