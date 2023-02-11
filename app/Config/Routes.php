@@ -51,6 +51,15 @@ $routes->post('client/profile', 'AuthController::profile');
 
 //Worker Routes
 $routes->get('worker/dashboard','WorkerController::index');
+$routes->get('worker/profile', 'AuthController::profile_view');
+$routes->post('worker/profile', 'AuthController::profile');
+
+//Admin Routes
+$routes->get('admin/login','AdminController::login_view');
+$routes->post('admin/login','AdminController::login');
+$routes->get('admin/dashboard','AdminController::index');
+$routes->get('admin/workers','AdminController::worker_view');
+$routes->get('admin/clients','AdminController::client_view');
 
 
 /*

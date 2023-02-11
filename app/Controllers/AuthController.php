@@ -143,7 +143,13 @@ class AuthController extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('auth/login');
+        if(session()->get('role')=='admin'){
+            return redirect()->to('admin/login');
+        }
+        else{
+            return redirect()->to('auth/login');
+        }
+        
     }
 
     //update user
@@ -181,11 +187,9 @@ class AuthController extends BaseController
     public function profile_view(){
         $model = new Auth();
         $id = session()->get('id');
-        echo $id;
+        //echo $id;
         //get user detatails by id
         $user = $model->where('id', $id)->first();
-
-
         // Pass the data to the view
         return view('auth/profile', ['user' => $user]);
         
@@ -198,7 +202,7 @@ class AuthController extends BaseController
         
 
         $model = new Auth();
-        $id = 1;
+        $id = session()->get('id'); ;
 
         $data = [
             'name' => $this->request->getVar('name'),
@@ -210,7 +214,18 @@ class AuthController extends BaseController
 
         $model->update($id, $data);
 
-        return redirect()->to(base_url('auth/dashboard'));
+        $id = session()->get('id');
+        //echo $id;
+        //get user detatails by id
+        $user = $model->where('id', $id)->first();
+
+        if($user['role']=='client'){
+
+            return redirect()->to(base_url('client/dashboard'));
+        }else{
+            return redirect()->to(base_url('worker/dashboard'));
+
+        }
       
     }
 }
