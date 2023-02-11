@@ -154,7 +154,7 @@
             <span class="sr-only">Toggle navigation</span>
           </button>
 
-          <span class="page-title">Welcome Client</span>
+          <span class="page-title">Welcome Client @<?php session()->get('name');?></span>
 
           <div class="navbar-right ">
 

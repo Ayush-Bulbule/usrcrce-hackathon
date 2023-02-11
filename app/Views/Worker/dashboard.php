@@ -91,7 +91,7 @@
             <li class="active">
               <a class="sidenav-item-link" href="add_req">
                 <i class="mdi mdi-notebook"></i>
-                <span class="nav-text">Add Issue/Requst</span>
+                <span class="nav-text">Search Tasks</span>
               </a>
             </li>
 
@@ -154,7 +154,7 @@
             <span class="sr-only">Toggle navigation</span>
           </button>
 
-          <span class="page-title">Welcome Client</span>
+          <span class="page-title">Welcome Worker @<?php session()->get('name');?></span>
 
           <div class="navbar-right ">
 
