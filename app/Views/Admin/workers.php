@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Work Connect - Admin</title>
+  <title>Work Connect - ADmin</title>
 
   <!-- theme meta -->
 
@@ -77,7 +77,7 @@
         <!-- Aplication Brand -->
         <div class="app-brand">
           <a href="/index.html">
-            <img src="<?php echo base_url("images/logo1.png")?>" alt="Mono">
+            <img src="/images/logo.png" alt="Mono">
             <span class="brand-name">Work Connect</span>
           </a>
         </div>
@@ -108,10 +108,6 @@
 
 
 
-
-
-
-
           </ul>
 
         </div>
@@ -135,19 +131,19 @@
             <span class="sr-only">Toggle navigation</span>
           </button>
 
-          <span class="page-title">Welcome Admin @<?= session()->get('name') ?></span>
+          <span class="page-title">Welcome Client @<?= session()->get('name') ?></span>
 
           <div class="navbar-right ">
 
 
             <ul class="nav navbar-nav">
-              <!-- Offcanvas -->
+              
               
               <!-- User Account -->
               <li class="dropdown user-menu">
                 <button class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <img src="images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="User Image" />
-                  <span class="d-none d-lg-inline-block">Admin</span>
+                  <span class="d-none d-lg-inline-block">Client</span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li>
@@ -183,6 +179,7 @@
       <div class="content-wrapper">
         <div class="content">
 
+
         <div class="col-xl-12">
     <!-- Basic Table-->
     <div class="card card-default">
@@ -190,7 +187,10 @@
         <h2>Workers Information</h2>
       </div>
       <div class="card-body">
-    
+        <div class="collapse" id="collapse-table-1">
+          <pre class="language-html mb-4">
+
+        </div>
         <table class="table">
           <thead>
             <tr>
@@ -241,8 +241,6 @@
         </table>
       </div>
     </div>
-    
-
 
 
           <!-- Footer -->
@@ -263,107 +261,6 @@
       </div>
 
 
-
-      <!-- Card Offcanvas -->
-      <div class="card card-offcanvas" id="contact-off">
-        <div class="card-header">
-          <h2>Workers</h2>
-        </div>
-        <div class="card-body">
-
-
-
-          <div class="media media-sm">
-            <div class="media-sm-wrapper">
-              <a href="user-profile.html">
-                <img src="images/user/user-sm-01.jpg" alt="User Image">
-                <span class="active bg-primary"></span>
-              </a>
-            </div>
-            <div class="media-body">
-              <a href="user-profile.html">
-                <span class="title">Selena Wagner</span>
-                <span class="discribe">Designer</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="media media-sm">
-            <div class="media-sm-wrapper">
-              <a href="user-profile.html">
-                <img src="images/user/user-sm-02.jpg" alt="User Image">
-                <span class="active bg-primary"></span>
-              </a>
-            </div>
-            <div class="media-body">
-              <a href="user-profile.html">
-                <span class="title">Walter Reuter</span>
-                <span>Developer</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="media media-sm">
-            <div class="media-sm-wrapper">
-              <a href="user-profile.html">
-                <img src="images/user/user-sm-03.jpg" alt="User Image">
-              </a>
-            </div>
-            <div class="media-body">
-              <a href="user-profile.html">
-                <span class="title">Larissa Gebhardt</span>
-                <span>Cyber Punk</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="media media-sm">
-            <div class="media-sm-wrapper">
-              <a href="user-profile.html">
-                <img src="images/user/user-sm-04.jpg" alt="User Image">
-              </a>
-
-            </div>
-            <div class="media-body">
-              <a href="user-profile.html">
-                <span class="title">Albrecht Straub</span>
-                <span>Photographer</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="media media-sm">
-            <div class="media-sm-wrapper">
-              <a href="user-profile.html">
-                <img src="images/user/user-sm-05.jpg" alt="User Image">
-                <span class="active bg-danger"></span>
-              </a>
-            </div>
-            <div class="media-body">
-              <a href="user-profile.html">
-                <span class="title">Leopold Ebert</span>
-                <span>Fashion Designer</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="media media-sm">
-            <div class="media-sm-wrapper">
-              <a href="user-profile.html">
-                <img src="images/user/user-sm-06.jpg" alt="User Image">
-                <span class="active bg-primary"></span>
-              </a>
-            </div>
-            <div class="media-body">
-              <a href="user-profile.html">
-                <span class="title">Selena Wagner</span>
-                <span>Photographer</span>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
 
 
 

@@ -331,7 +331,7 @@
 
               <div class="card-body">
 
-                <form action="<?php echo base_url('client/profile'); ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url('/client/profile'); ?>" method="post" enctype="multipart/form-data">
                   <div class="row mb-2">
                     <div class="col-lg-6">
                       <div class="form-group">

@@ -47,7 +47,7 @@
                   </div>
                   <div class="card-body px-5 pb-5 pt-0">
 
-                    <h4 class="text-dark mb-6 text-center">Admin Login Work Connect</h4>
+                    <h4 class="text-dark mb-6 text-center">Admin Login</h4>
 
                     <form action="<?php echo base_url('admin/login'); ?>" method="post" enctype="multipart/form-data">
                       <div class="row">
@@ -60,14 +60,11 @@
                         </div>
                         <div class="col-md-12">
 
-                          <div class="d-flex justify-content-end mb-3">
 
-                            <a class="text-color" href="#"> Forgot password? </a>
-
-                          </div>
 
                           <button type="submit" class="btn btn-primary btn-pill mb-4">Login</button>
 
+                          
                         </div>
                       </div>
                     </form>
