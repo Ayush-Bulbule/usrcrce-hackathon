@@ -175,8 +175,33 @@ class AuthController extends BaseController
 
         return view('users', $data);
     }
+
+    public function profile_view(){
+        return view('Auth\profile');
+    }
+    //to handle registration of user with fileds - 'name','email','password','age','role','phone','address','work_cat','idproof
+    public function profile()
+
+    {
+        helper(['form', 'url']);
+        
+
+        $model = new Auth();
+        $id = 1;
+
+        $data = [
+            'name' => $this->request->getVar('name'),
+            'email' => $this->request->getVar('email'),
+            'password' => $this->request->getVar('password'),
+            'phone' => $this->request->getVar('phone'),
+            'address' => $this->request->getVar('address'),
+        ];
+
+        $model->update($id, $data);
+
+        return redirect()->to(base_url('auth/dashboard'));
+      
+    }
 }
-
-
 
 
