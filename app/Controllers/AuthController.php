@@ -198,8 +198,7 @@ class AuthController extends BaseController
         
 
         $model = new Auth();
-        $id = session()->get('id');
-        $user = $model->where('id', $id)->first();
+        $id = 1;
 
         $data = [
             'name' => $this->request->getVar('name'),
@@ -211,13 +210,7 @@ class AuthController extends BaseController
 
         $model->update($id, $data);
 
-        if($user['role']=='client'){
-
-            return redirect()->to(base_url('client/dashboard'));
-        }else{
-            return redirect()->to(base_url('worker/dashboard'));
-
-        }
+        return redirect()->to(base_url('auth/dashboard'));
       
     }
 }

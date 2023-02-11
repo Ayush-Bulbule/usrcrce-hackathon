@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Work Connect</title>
+  <title>Hire Hands</title>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
@@ -39,15 +39,15 @@
                 <div class="card card-default mb-0">
                   <div class="card-header pb-0">
                     <div class="app-brand w-100 d-flex justify-content-center border-bottom-0">
-                      <a class="w-auto pl-0 d-flex flex-column"  href="dashboard">
+                      <a class="w-auto pl-0 d-flex flex-column"  href="/index.html">
                         <img src="/images/logo.png" alt="Mono" >
-                        <span class="brand-name text-dark">Work Connect</span>
+                        <span class="brand-name text-dark">Hire Hands</span>
                       </a>
                     </div>
                   </div>
                   <div class="card-body px-5 pb-5 pt-0">
 
-                    <h4 class="text-dark mb-6 text-center">Sign in to Work Connect</h4>
+                    <h4 class="text-dark mb-6 text-center">Sign in to Hire Hands</h4>
 
                     <form action="<?php echo base_url('auth/login'); ?>" method="post" enctype="multipart/form-data">
                       <div class="row">

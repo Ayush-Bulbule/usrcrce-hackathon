@@ -13,18 +13,28 @@ class ClientController extends BaseController
         //
         return view('Client/dashboard');
     }
+    public function addTask(){
+        $model = new Task();
 
-    public function add_req_view()
-    {
+
+        
+    }
+
+    public function profile_view(){
+
         $model = new Auth();
         $id = session()->get('id');
         echo $id;
         //get user detatails by id
         $user = $model->where('id', $id)->first();
 
+
         // Pass the data to the view
-        return view('client/add_req', ['user' => $user]);
+        return view('client/profile', ['user' => $user]);
+        
     }
+
+
     public function add_req()
     {
         if ($this->request->getMethod() === 'post') {
@@ -65,8 +75,7 @@ class ClientController extends BaseController
             }
         } else {
         //     // Show the form
-            return view('client/add_req');
+            return view('client/add_task');
         }
     }
-
 }
