@@ -91,7 +91,7 @@
             <li class="active">
               <a class="sidenav-item-link" href="add_req">
                 <i class="mdi mdi-notebook"></i>
-                <span class="nav-text">Add Issue/Requst</span>
+                <span class="nav-text">Search Tasks</span>
               </a>
             </li>
 
@@ -154,7 +154,7 @@
             <span class="sr-only">Toggle navigation</span>
           </button>
 
-          <span class="page-title">Welcome Client</span>
+          <span class="page-title">Welcome Worker @<?= session()->get('name') ?></span>
 
           <div class="navbar-right ">
 
@@ -191,7 +191,7 @@
                             </a>
                           </div>
                           <div class="media-body">
-                            <a href="user-profile.html">
+                            <a href="auth/profile">
                               <span class="title mb-0">John Doe</span>
                               <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly months do things on at.</span>
                               <span class="time">

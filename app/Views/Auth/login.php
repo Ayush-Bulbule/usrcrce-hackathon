@@ -39,8 +39,8 @@
                 <div class="card card-default mb-0">
                   <div class="card-header pb-0">
                     <div class="app-brand w-100 d-flex justify-content-center border-bottom-0">
-                      <a class="w-auto pl-0" href="/index.html">
-                        <img src="/images/logo.png" alt="Mono">
+                      <a class="w-auto pl-0 d-flex flex-column"  href="/index.html">
+                        <img src="/images/logo.png" alt="Mono" >
                         <span class="brand-name text-dark">Work Connect</span>
                       </a>
                     </div>
@@ -51,10 +51,6 @@
 
                     <form action="<?php echo base_url('auth/login'); ?>" method="post" enctype="multipart/form-data">
                       <div class="row">
-                      <div class="form-group col-md-12 mb-4">
-                          <input type="text" class="form-control input-lg" id="name" name="name"
-                            placeholder="Name">
-                        </div>
                         <div class="form-group col-md-12 mb-4">
                           <input type="email" class="form-control input-lg" id="email" name="email"
                             placeholder="Email">

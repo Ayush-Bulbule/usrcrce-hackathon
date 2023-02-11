@@ -82,6 +82,14 @@ class AuthController extends BaseController
 
     //Login -----------------------------------------------------------------
     public function login_view(){
+        //check if user is already login check his role and login
+        if(session()->get('isLoggedIn')){
+            if(session()->get('role')=='client'){
+                return redirect()->to(base_url('client/dashboard'));
+            }else{
+                return redirect()->to(base_url('worker/dashboard'));
+            }
+        }
         
         return view('Auth\login');
     }
@@ -113,7 +121,10 @@ class AuthController extends BaseController
         else
         {
             session()->set([
+                'id'=>$user['id'],
                 'email' => $user['email'],
+                'role' => $user['role'],
+                'name'=>$user['name'],
                 'isLoggedIn' => true
             ]);
 
@@ -168,7 +179,16 @@ class AuthController extends BaseController
     }
 
     public function profile_view(){
-        return view('Auth\profile');
+        $model = new Auth();
+        $id = session()->get('id');
+        echo $id;
+        //get user detatails by id
+        $user = $model->where('id', $id)->first();
+
+
+        // Pass the data to the view
+        return view('auth/profile', ['user' => $user]);
+        
     }
     //to handle registration of user with fileds - 'name','email','password','age','role','phone','address','work_cat','idproof
     public function profile()
