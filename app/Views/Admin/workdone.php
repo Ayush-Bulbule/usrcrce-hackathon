@@ -30,7 +30,22 @@
             </tr>
           </thead>
           <tbody>
+            <?php
+            //print_r($data);
+            foreach($data as $r)
+            {
+              echo"
+            <tr>
+            <td>1</td>
+            <td>".$data['task']['title']."</td>
+            <td>".$data['client']['name']."</td>
+            <td>".$data['worker']['name']."</td>
+            <td>".$data['quote']['amount']."</td>
+            </tr>
+            ";
+            }
             
+            ?>
           </tbody>
         </table>
       </div>

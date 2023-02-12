@@ -14,7 +14,7 @@ class Task extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title','description','category','client'];
+    protected $allowedFields    = ['title','description','client','category','status','quotes'];
 
     // Dates
     protected $useTimestamps = false;

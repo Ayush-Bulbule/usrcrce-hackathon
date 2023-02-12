@@ -131,13 +131,23 @@ class AdminController extends BaseController
         $model = new Task();
         $user_model = new Auth();
         $quote_model = new Quote();
-        $task = $model->where('status','completed')->first();
-        $client = $user_model->where('id',$task['client'])->first();
+
+        $quote = $quote_model->where('status', 'accepted')->get()->getRowArray();
+        $task = $model->where('id',$quote['task_id'])->first();
+        $client = $user_model->where('id',$quote['client_id'])->first();
+        $worker = $user_model->where('id',$quote['worker_id'])->first();
+
+        
+
         $data['task'] = $task;
         $data['client'] = $client;
-        print_r($data);
+        $data['worker'] = $worker;
+        $data['quote'] = $quote;
+
+        //print_r($quote);
         
-        return view('Admin\workdone',$data);
+        
+        return view('Admin\workdone',['data' => $data]);
    }
 
 
